@@ -7,7 +7,9 @@
     </header>
 
     <section class="container contact-list-container">
-       
+        <div *ngFor="let contact of contacts">
+       <app-contact [contactDisplayed]="contact" (buttonClicked)="buttonClicked($event)"></app-contact>
+        </div>
     </section>
 
 

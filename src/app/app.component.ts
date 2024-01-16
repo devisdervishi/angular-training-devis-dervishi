@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from './contact';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project';
+  showContact(contact:Contact){
+    alert(contact.name+" "+contact.mobilenumber)
+  }
 }
