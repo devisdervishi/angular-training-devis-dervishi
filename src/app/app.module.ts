@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ViewComponent } from './view/view.component';
-import { InsideViewComponent } from './inside-view/inside-view.component';
+import { InsideViewComponent } from './view/inside-view/inside-view.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, NgModule, Output } from '@angular/core';
-import { InsideViewComponent } from '../inside-view/inside-view.component';
+import { InsideViewComponent } from './inside-view/inside-view.component';
 
 @Component({
   selector: 'app-view',
