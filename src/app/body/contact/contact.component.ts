@@ -11,6 +11,7 @@ export class ContactComponent {
   @Input('contactDisplayed')
   contact!:Contact;
 
+
   comment!:string;
 
  @Output()

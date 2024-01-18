@@ -5,11 +5,11 @@
     <header>
         <h1>Contact List </h1>
     </header>
-
+<a [routerLink]="['add']">Add a contact</a>
     <section class="container contact-list-container">
-        <div *ngFor="let contact of contacts">
+        <ng-container *ngFor="let contact of contacts | contactFilter:searchString">
        <app-contact [contactDisplayed]="contact" (buttonClicked)="buttonClicked($event)"></app-contact>
-        </div>
+        </ng-container>
     </section>
 
 

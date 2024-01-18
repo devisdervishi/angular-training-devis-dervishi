@@ -8,6 +8,17 @@ import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './body/contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { ContactFilterPipe } from './contact-filter.pipe';
+import { AddContactComponent } from './add-contact/add-contact.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './main/main.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
+
+const appRoutes: Routes = [
+  { path: 'add', component: AddContactComponent },
+  { path: '', component: MainComponent },
+  {path: 'update/:contactId', component: UpdateContactComponent },
+];
 
 @NgModule({
   declarations: [
@@ -16,6 +27,10 @@ import { FormsModule } from '@angular/forms';
     BodyComponent,
     FooterComponent,
     ContactComponent,
+    ContactFilterPipe,
+    AddContactComponent,
+    MainComponent,
+    UpdateContactComponent,
     
     
   ],
@@ -23,7 +38,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

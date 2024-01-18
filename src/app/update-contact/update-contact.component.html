@@ -1,0 +1,12 @@
+<form *ngIf="contact" #myForm="ngForm">
+    Name:
+    <input type="text" [(ngModel)]="name" required [(ngModel)]="name" name="name">
+    <br>
+    Mobile:
+    <input type="text" [value]="mobile" required [(ngModel)]="mobile" name="mobile">
+    <br> 
+    Is favorite
+    <input  type="checkbox" value="true" id="isFavorite" [(ngModel)]="contact.isFavorite">
+    <br>
+    <button [disabled]="!myForm.valid" type="submit">Add</button>
+  </form>
