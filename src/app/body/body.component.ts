@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contact } from '../contact';
 import { AppComponent } from '../app.component';
 import { Contacts } from '../contacts';
+import { ContactService } from '../contact.service';
 
 
 @Component({
@@ -10,7 +11,10 @@ import { Contacts } from '../contacts';
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent {
-  contacts :Contact[]=new Contacts().contacts
+  constructor(private contactService:ContactService){
+
+  }
+  contacts :Contact[]= this.contactService.getContacts()
    @Input()
    searchString!:string;
    @Output() 

@@ -1,9 +1,28 @@
 <form #myForm="ngForm">
     Name:
-    <input type="text" required [(ngModel)]="name" name="name">
+    <input type="text"  [(ngModel)]="name" #contactName="ngModel" name="contactName" required minlength="2" startsWithUppercase>
+    <ng-container *ngIf="contactName.errors | oneError:['minlength','startsWithUpperCase'] as errors">
+    <div *ngIf="contactName.errors?.['required']&&contactName.dirty">Name is required</div>
+    <div *ngIf="errors?.['minlength']&&contactName.dirty">Name must be at least 2 chars long</div>
+    <div *ngIf="errors?.['startsWithUpperCase']">Name must start with uppercase</div>
+    </ng-container>
+    
     <br>
     Mobile:
-    <input type="text" required [(ngModel)]="mobile" name="mobile">
+    <input type="text"  [(ngModel)]="mobile" #contactMobile="ngModel" name="contactMobile" required minlength="8">
+    <div *ngIf="contactMobile.errors?.['required']&&contactMobile.dirty">Mobile is required</div>
+    <div *ngIf="contactMobile.errors?.['minlength']&&contactMobile.dirty">
+      Mobile must be at least 8 numbers long</div>
     <br> 
+    Is favorite
+    <input  type="checkbox" value="true" id="isFavorite"  name="isFavorite">
+    <br>
+    Is deleted
+    <input  type="checkbox" value="true" id="isFavorite"  name="isDeleted">
+    <br>
+    Is active
+    <input  type="checkbox" value="true" id="isFavorite"  name="isActive">
+    <br>
+  
     <button [disabled]="!myForm.valid" type="submit">Add</button>
   </form>
