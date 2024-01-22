@@ -2,7 +2,7 @@
     <div *ngIf="!contact.isDeleted" [ngStyle]="contact.isFavorite ? {'background-color':'green'}:{'background-color':'gray'}" 
     [ngClass]="{'active':contact.isActive}"
      class="contact">
-        <p><a [routerLink]="['update',contact.contactId]">Name:{{contact.name}}</a></p>
+        <h5><a style="color: goldenrod;" [routerLink]="['update',contact.contactId]">Name:{{contact.name}}</a></h5>
         <p>Phone:{{contact.mobilenumber}}</p>
         <input [(ngModel)]="comment" type="text"><br><br>
         <p *ngIf="comment">Comment:{{comment}}</p>

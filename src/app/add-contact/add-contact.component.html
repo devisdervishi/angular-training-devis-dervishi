@@ -1,17 +1,20 @@
-<form #myForm="ngForm">
+<body>
+  
+
+<br><br><form #myForm="ngForm">
     Name:
     <input type="text"  [(ngModel)]="name" #contactName="ngModel" name="contactName" required minlength="2" startsWithUppercase>
     <ng-container *ngIf="contactName.errors | oneError:['minlength','startsWithUpperCase'] as errors">
-    <div *ngIf="contactName.errors?.['required']&&contactName.dirty">Name is required</div>
-    <div *ngIf="errors?.['minlength']&&contactName.dirty">Name must be at least 2 chars long</div>
-    <div *ngIf="errors?.['startsWithUpperCase']">Name must start with uppercase</div>
+    <div class="error" *ngIf="contactName.errors?.['required']&&contactName.dirty">Name is required</div>
+    <div class="error" *ngIf="errors?.['minlength']&&contactName.dirty">Name must be at least 2 chars long</div>
+    <div class="error" *ngIf="errors?.['startsWithUpperCase']">Name must start with uppercase</div>
     </ng-container>
     
     <br>
     Mobile:
     <input type="text"  [(ngModel)]="mobile" #contactMobile="ngModel" name="contactMobile" required minlength="8">
-    <div *ngIf="contactMobile.errors?.['required']&&contactMobile.dirty">Mobile is required</div>
-    <div *ngIf="contactMobile.errors?.['minlength']&&contactMobile.dirty">
+    <div class="error" *ngIf="contactMobile.errors?.['required']&&contactMobile.dirty">Mobile is required</div>
+    <div class="error" *ngIf="contactMobile.errors?.['minlength']&&contactMobile.dirty">
       Mobile must be at least 8 numbers long</div>
     <br> 
     Is favorite
@@ -25,4 +28,7 @@
     <br>
   
     <button [disabled]="!myForm.valid" type="submit">Add</button>
+    <button [routerLink]="''">Home</button>
   </form>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
